@@ -23,8 +23,8 @@ services:
       context: ./api/
     networks:
       - cat-pinterest-net
-    environment:
-      NODE_ENV: prod
+    env_file:
+      - ./api/.env
     depends_on:
       cat-pinterest-api-pg:
         condition: service_healthy
